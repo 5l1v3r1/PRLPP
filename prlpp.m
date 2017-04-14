@@ -1,10 +1,11 @@
-function W = prlpp(X,zat,b)
+function W = prlpp(X,zat,b,l)
 %X is a d x N matrix where d is dimension of each sample and N is the
 %number of samples
 %zat is energy percentage, recommend 98%
 %d is the dimension of each face sample
 %N is the number of samples
 %b is a revised eigenvalue in null space
+%l is the dimension you lower the dimension of X to, l must bo lower than b
 d,N = size(X);
 S = zeros(N);
 S = giveweight(S,X);
@@ -25,5 +26,6 @@ for i = r+1:d
     Xigma(i,i) = b;
 end
 F_pr = U*Xigma*V;
-
+[V,~] = eig(inv(F_pr)*(X*L*X')); %eig默认对特征值排序了，所以无需得到特征值
+W = V(:,1:l);
 end
