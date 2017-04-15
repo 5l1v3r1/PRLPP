@@ -1,14 +1,15 @@
-function W = prlpp(X,zat,b,l)
+function W = prlpp(X,k,t,zat,b,l)
 %X is a d x N matrix where d is dimension of each sample and N is the
 %number of samples
-%zat is energy percentage, recommend 98%
+%k and t are two wmpirically prespecified parameters
+%zat is an energy percentage, recommend 98%
 %d is the dimension of each face sample
 %N is the number of samples
 %b is a revised eigenvalue in null space
 %l is the dimension you lower the dimension of X to, l must bo lower than b
 d,N = size(X);
 S = zeros(N);
-S = giveweight(S,X);
+S = giveweight(S,N,X,k,t);
 D = zeros(N);
 for j = 1:N
     D(j,j) = sum(S(:,j));

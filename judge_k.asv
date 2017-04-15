@@ -1,0 +1,4 @@
+function flag = judge_k(X,i,j,k)
+flag = 0;
+d norm(X(:,i)-X
+end

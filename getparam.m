@@ -5,3 +5,4 @@ err = 0;
 for i=1:r
     err = err + norm((alpha/(i+beta)^a1)-Xigma_vector(i),2);
 end
+end

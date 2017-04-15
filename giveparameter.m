@@ -21,7 +21,7 @@ end
 a = a1;
 alpha = (Xigma_vector(1)*Xigma_vector(c)*(c-1)^a1)/(Xigma_vector(1)^(1/a1)-Xigma_vector(c)^(1/a1))^a;
 beta = (c*Xigma_vector(c)^(1/a) - Xigma_vector(1)^(1/a))/(Xigma_vector(1)^(1/a)-Xigma_vector(c)^(1/a));
-
+end
 
 
     
